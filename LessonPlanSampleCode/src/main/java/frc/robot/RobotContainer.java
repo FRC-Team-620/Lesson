@@ -8,8 +8,11 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.SingleMotorCommand;
+import frc.robot.commands.SingleSelonoidCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.PenumaticsSubsystem;
 import frc.robot.subsystems.SingleMotorSubsystem;
+import edu.wpi.first.wpilibj.PneumaticsBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -22,12 +25,21 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private SingleMotorSubsystem singleMotorSubsystem;
   private CommandXboxController control = new CommandXboxController(0);
+
+  private SingleMotorSubsystem singleMotorSubsystem;
+  private PenumaticsSubsystem penumatics;
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     this.singleMotorSubsystem = new SingleMotorSubsystem();
     this.singleMotorSubsystem.setDefaultCommand(new SingleMotorCommand(singleMotorSubsystem, control));
+    
+    this.penumatics = new PenumaticsSubsystem();
+    this.control.a().onTrue(new SingleSelonoidCommand(false));
+    
+    
+    
+    
     // Configure the trigger bindings
     configureBindings();
   }
