@@ -10,7 +10,7 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.SingleMotorCommand;
 import frc.robot.commands.SingleSelonoidCommand;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.PenumaticsSubsystem;
+import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.subsystems.SingleMotorSubsystem;
 import edu.wpi.first.wpilibj.PneumaticsBase;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -28,13 +28,13 @@ public class RobotContainer {
   private CommandXboxController control = new CommandXboxController(0);
 
   private SingleMotorSubsystem singleMotorSubsystem;
-  private PenumaticsSubsystem penumatics;
+  private PneumaticsSubsystem penumatics;
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     this.singleMotorSubsystem = new SingleMotorSubsystem();
     this.singleMotorSubsystem.setDefaultCommand(new SingleMotorCommand(singleMotorSubsystem, control));
     
-    this.penumatics = new PenumaticsSubsystem();
+    this.penumatics = new PneumaticsSubsystem();
     this.control.a().onTrue(new SingleSelonoidCommand(false));
     
     

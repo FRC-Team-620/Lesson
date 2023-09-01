@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.PowerDistribution.ModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class PenumaticsSubsystem extends SubsystemBase {
+public class PneumaticsSubsystem extends SubsystemBase {
   /** Creates a new PenumaticsSubsystem. */
   private Solenoid piston1 = new Solenoid(PneumaticsModuleType.REVPH, 1);
-  public PenumaticsSubsystem() {
+  public PneumaticsSubsystem() {
 
   }
 
