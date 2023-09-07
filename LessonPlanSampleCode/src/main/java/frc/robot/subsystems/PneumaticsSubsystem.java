@@ -11,7 +11,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PneumaticsSubsystem extends SubsystemBase {
   /** Creates a new PenumaticsSubsystem. */
+
+  //TODO: Module Type confirmaiton & channel confirmation 
   private Solenoid piston1 = new Solenoid(PneumaticsModuleType.REVPH, 1);
+  
   public PneumaticsSubsystem() {
 
   }
